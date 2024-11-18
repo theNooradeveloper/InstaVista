@@ -85,6 +85,40 @@
         #search-box:focus-visible {
             outline: 2px solid rgb(195, 193, 193);
         }
+
+        @media (max-width:790px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            #search-box {
+                width: 400px;
+            }
+
+            .medium {
+                height: 235px;
+            }
+        }
+        @media (max-width:450px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+                margin-top: 3rem;
+            }
+
+            #search-box {
+                width: unset;
+                padding: 10px 90px 10px 30px;
+                margin-top: 3rem;
+            }
+
+            .medium,
+            .small ,
+            .large {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 
@@ -94,7 +128,7 @@
     <div class="container" id="imageContainer"></div>
     <button id="loadMoreButton">Load More</button>
     <script>
-        
+
         let page = 1
         let userInput = ''
         let defaultQuery = 'collection of images'
